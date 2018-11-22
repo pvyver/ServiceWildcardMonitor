@@ -33,13 +33,24 @@
       <Alias>SC</Alias>
       <PackageToBundle>false</PackageToBundle>
     </ManagementPackReference>
+    <ManagementPackReference Include="Microsoft.SystemCenter.NTService.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\Microsoft.SystemCenter.NTService.Library.mp</HintPath>
+      <Alias>MicrosoftSystemCenterNTServiceLibrary</Alias>
+      <MinVersion>7.1.10226.0</MinVersion>
+      <PackageToBundle>False</PackageToBundle>
+    </ManagementPackReference>
     <ManagementPackReference Include="Microsoft.Windows.Library">
       <Alias>Windows</Alias>
       <PackageToBundle>false</PackageToBundle>
     </ManagementPackReference>
+    <ManagementPackReference Include="System.AdminItem.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\System.AdminItem.Library.mp</HintPath>
+      <Alias>SAL</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+    </ManagementPackReference>
     <ManagementPackReference Include="System.Health.Library">
       <Alias>Health</Alias>
-      <PackageToBundle>false</PackageToBundle>
+      <PackageToBundle>False</PackageToBundle>
     </ManagementPackReference>
     <ManagementPackReference Include="System.Library">
       <Alias>System</Alias>
@@ -49,6 +60,50 @@
       <Alias>Visualization</Alias>
       <PackageToBundle>false</PackageToBundle>
     </ManagementPackReference>
+    <ManagementPackReference Include="System.Software.Library">
+      <HintPath>C:\Program Files (x86)\System Center Visual Studio Authoring Extensions\References\OM2012R2\System.Software.Library.mp</HintPath>
+      <Alias>SSL</Alias>
+      <MinVersion>7.5.8501.0</MinVersion>
+    </ManagementPackReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes" />
+    <Folder Include="HealthModel" />
+    <Folder Include="Discoveries" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\SWM.Server.ServiceClass.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\SWM.ServerClass.mpx">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Discoveries\SWM.Server.ServiceClassDiscovery.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Discoveries\SWM.Server.ServiceClassDiscovery.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="Discoveries\SWMServerDiscovery.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>Discoveries\SWMServerDiscovery.mptg</DependentUpon>
+    </Compile>
+    <Compile Include="HealthModel\ServiceWildcardMonitor.mptg.mpx">
+      <SubType>Code</SubType>
+      <DependentUpon>HealthModel\ServiceWildcardMonitor.mptg</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Discoveries\SWM.Server.ServiceClassDiscovery.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="Discoveries\SWMServerDiscovery.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
+    <Content Include="HealthModel\ServiceWildcardMonitor.mptg">
+      <SubType>Content</SubType>
+      <Generator>FragmentGenerator</Generator>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VSAC\Microsoft.SystemCenter.OperationsManager.targets" />
 </Project>

@@ -1,0 +1,22 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance3d5876a2e98b4569931758d52012d10f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>SWM.Server.ServiceClassDiscoveryRule</Id>
+        <DisplayName>SWM Server ServiceClassDiscoveryRule</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;NameSpace&gt;root\cimv2&lt;/NameSpace&gt;&lt;Query&gt;select * from win32_service where name like 'SWM%'&lt;/Query&gt;&lt;Frequency&gt;86400&lt;/Frequency&gt;&lt;ClassId&gt;$MPElement[Name="SWM.Server.ServiceClass"]$&lt;/ClassId&gt;&lt;InstanceSettings&gt;&lt;Settings&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Name&gt;&lt;Value&gt;$Target/Host/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='Name']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/ServiceProcessName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='PathName']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/DisplayName$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='DisplayName']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="MicrosoftSystemCenterNTServiceLibrary!Microsoft.SystemCenter.NTService"]/Description$&lt;/Name&gt;&lt;Value&gt;$Data/Property[@Name='Description']$&lt;/Value&gt;&lt;/Setting&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="System!System.Entity"]/DisplayName$&lt;/Name&gt;&lt;Value&gt;Service Wildcard Monitor ($Data/Property[@Name='Name']$)&lt;/Value&gt;&lt;/Setting&gt;&lt;/Settings&gt;&lt;/InstanceSettings&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.WmiProviderWithClassSnapshotDataMapper</DataSourceType>
+        <Target>SWM.ServerClass</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses />
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>

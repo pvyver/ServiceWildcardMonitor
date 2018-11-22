@@ -1,0 +1,27 @@
+<TemplateGroup>
+  <Instances>
+    <Instance ID="Instance3d5876a2e98b4569931758d52012d10f" Type="Microsoft.SystemCenter.Authoring.CodeGeneration.Monitoring.Discovery" Version="1.0.0.0">
+      <DiscoveryConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>SWM.Server.DiscoveryRule</Id>
+        <DisplayName>SWM Server Discovery Rule</DisplayName>
+        <Description>Description for the new discovery.</Description>
+        <DataSourceId>DS</DataSourceId>
+        <DataSourceConfig>&lt;NameSpace&gt;Root\Cimv2&lt;/NameSpace&gt;&lt;Query&gt;select * from win32_service where name like 'SWM01'&lt;/Query&gt;&lt;Frequency&gt;86400&lt;/Frequency&gt;&lt;ClassId&gt;$MPElement[Name="SWM.ServerClass"]$&lt;/ClassId&gt;&lt;InstanceSettings&gt;&lt;Settings&gt;&lt;Setting&gt;&lt;Name&gt;$MPElement[Name="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Name&gt;&lt;Value&gt;$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$&lt;/Value&gt;&lt;/Setting&gt;&lt;/Settings&gt;&lt;/InstanceSettings&gt;</DataSourceConfig>
+        <DataSourceType>Windows!Microsoft.Windows.WmiProviderWithClassSnapshotDataMapper</DataSourceType>
+        <Target>Windows!Microsoft.Windows.Computer</Target>
+        <Enabled>true</Enabled>
+        <Remotable>true</Remotable>
+        <Priority>Normal</Priority>
+        <ConfirmDelivery>false</ConfirmDelivery>
+        <Category>Discovery</Category>
+        <DiscoveryClasses>
+          <DiscoveryClassItem>
+            <TypeId>SWM.ServerClass</TypeId>
+            <Properties />
+          </DiscoveryClassItem>
+        </DiscoveryClasses>
+        <DiscoveryRelationships />
+      </DiscoveryConfig>
+    </Instance>
+  </Instances>
+</TemplateGroup>
